@@ -3,7 +3,8 @@ import styles from "./../css/login.module.css";
 import { useLogin } from "../hooks/useLogin";
 
 export const Login = () => {
-  const { email, password, setMail, setPassword, login } = useLogin();
+  const { email, password, setMail, setPassword, navigate, loginUser } =
+    useLogin();
 
   return (
     <div className={styles.container}>
@@ -21,8 +22,11 @@ export const Login = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <Button colorScheme="blue" onClick={() => login()}>
+          <Button colorScheme="blue" onClick={() => loginUser()}>
             Iniciar
+          </Button>
+          <Button colorScheme="red" onClick={() => navigate("/register")}>
+            Registrar
           </Button>
         </CardBody>
       </Card>
