@@ -2,6 +2,10 @@ import { createBrowserRouter } from "react-router-dom";
 import { Login } from "./login/views/Login";
 import { PrivateRoute } from "./ProtectRoute";
 import { Register } from "./register/views/Register";
+import { Home } from "./home/views/Home";
+import { Vehiculos } from "./vehiculos/views/Vehiculos";
+import { Rutas } from "./rutas/views/Ruta";
+import { Viajes } from "./viajes/views/Viajes";
 
 export const router = createBrowserRouter([
   {
@@ -14,6 +18,24 @@ export const router = createBrowserRouter([
   },
   {
     path: "/home",
-    element: <PrivateRoute><h1>hola</h1></PrivateRoute>,
+    element: (
+      <PrivateRoute>
+        <Home />
+      </PrivateRoute>
+    ),
+    children: [
+      {
+        path: "viajes",
+        element: <Viajes/>,
+      },
+      {
+        path: "vehiculos",
+        element: <Vehiculos/>,
+      },
+      {
+        path: "rutas",
+        element: <Rutas/>,
+      }
+    ]
   },
 ]);

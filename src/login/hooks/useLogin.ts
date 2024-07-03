@@ -11,8 +11,9 @@ export const useLogin = () => {
 
   const loginUser  = async () => {
     try {
-      const {token} = await login(email, password);
+      const {token,userName} = await login(email, password);
       localStorage.setItem("token",token)
+      localStorage.setItem("username",userName)
       navigate("/home")
     } catch (error: any) {
       alert ("Error al iniciar sesión")
