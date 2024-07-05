@@ -4,8 +4,13 @@ export const useHome = () => {
 
     const navigate = useNavigate();
 
+    const logout = () => {
+        localStorage.removeItem('token');
+        navigate('/',{replace: true})
+    }
 
     return{
-        navigate
+        navigate,
+        logout
     }
 }

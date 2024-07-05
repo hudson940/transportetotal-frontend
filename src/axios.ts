@@ -12,3 +12,11 @@ http.interceptors.request.use(config => {
     return config;
 
 })
+
+
+http.interceptors.response.use(config => config,(error) => {
+    if(error.response.status == 403){
+        localStorage.removeItem('token');
+        window.location.href = '/';
+    }
+})

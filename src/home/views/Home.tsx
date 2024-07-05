@@ -4,15 +4,15 @@ import { Outlet } from "react-router-dom";
 import { useHome } from "../hooks/useHome";
 
 export const Home = () => {
-  const { navigate } = useHome();
+  const { navigate,logout } = useHome();
 
   return (
     <div className={styles.container}>
       <nav>
         <h3>Menu</h3>
         <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
-          <span>{localStorage.getItem("userName") ?? "Nombre de usuario"}</span>
-          <Button>Cerrar sesión</Button>
+          <span>{localStorage.getItem("username") ?? "Nombre de usuario"}</span>
+          <Button onClick={() => logout()}>Cerrar sesión</Button>
         </div>
       </nav>
       <main>

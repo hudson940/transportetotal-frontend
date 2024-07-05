@@ -6,6 +6,7 @@ import { Home } from "./home/views/Home";
 import { Vehiculos } from "./vehiculos/views/Vehiculos";
 import { Rutas } from "./rutas/views/Ruta";
 import { Viajes } from "./viajes/views/Viajes";
+import { Gastos } from "./viajes/views/Gastos";
 
 export const router = createBrowserRouter([
   {
@@ -35,6 +36,10 @@ export const router = createBrowserRouter([
       {
         path: "rutas",
         element: <Rutas/>,
+      },
+      {
+        path: "viaje-gastos/:id",
+        element: <Gastos />,
       }
     ]
   },
