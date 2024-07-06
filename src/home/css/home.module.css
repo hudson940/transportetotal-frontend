@@ -1,0 +1,51 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+
+.container nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: white;
+    height: 70px;
+    box-sizing: border-box;
+    border-bottom: 1px solid grey;
+    font-weight: bolder;
+}
+
+.container main {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+}
+
+.navbar{
+    background-color: white;
+    height: calc( 100vh - 70px);
+    border-right: 1px  solid grey;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-right: 1px solid grey;
+}
+
+.navbar span {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    height: 50px;
+    border: 1px solid  grey;
+    padding-left: 5px;
+    border-radius: 5px;
+
+}
+
+.navbar span:hover {
+     background-color: gray;
+     color: white;
+     font-weight: bolder;
+}
